@@ -1,0 +1,127 @@
+server: # REST and WS server
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  plugins:
+      - dependency: "dev.lavalink.youtube:youtube-plugin:1.8.3"
+        repository: "https://maven.lavalink.dev/releases"
+  pluginsDir: "./plugins"
+  server:
+    password: "youshallnotpass"
+    sources:
+      youtube: false
+      bandcamp: false
+      soundcloud: true
+      twitch: false
+      vimeo: false
+      http: false
+      local: false
+    filters: # All filters are enabled by default
+      volume: true
+      equalizer: true
+      karaoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      distortion: true
+      rotation: true
+      channelMix: true
+      lowPass: true
+      bufferDurationMs: 200 # NAS 버퍼의 지속 시간. GC 중단에 대한 내성이 향상되지만, 너무 높으면 지연이 증가할 수 있습니다.
+      frameBufferDurationMs: 2000 # 오디오를 얼마나 많은 밀리초 동안 버퍼링할지
+      opusEncodingQuality: 5 # Opus 인코더 품질. 0~10 범위에서 유효하며, CPU 부담을 줄이기 위해 낮은 값을 선택합니다.
+      resamplingQuality: LOW # 리샘플링 작업의 품질. LOW, MEDIUM 및 HIGH 중에서 선택하며, LOW을 사용하여 CPU 부하를 줄입니다.
+      trackStuckThresholdMs: 5000 # 트랙이 얼마나 오랫동안 멈춰 있을 수 있는지의 임계값. 음성이 반환되지 않으면 멈춘 것으로 간주합니다.
+      useSeekGhosting: false # Seek ghosting을 비활성화하여 메모리 사용량을 줄입니다.
+      youtubePlaylistLoadLimit: 2 # 페이지당 최대 200개의 트랙을 로드하는 대신 2페이지로 제한합니다.
+      playerUpdateInterval: 10 # 클라이언트에 플레이어 업데이트를 보내는 빈도, 10초로 늘려 CPU 사용량을 줄입니다.
+      youtubeSearchEnabled: true # YouTube 검색 사용
+      soundcloudSearchEnabled: true # SoundCloud 검색 사용
+      gc-warnings: true # GC 경고 활성화
+
+          #ratelimit:
+      #ipBlocks: ["1.0.0.0/8", "..."] # list of ip blocks
+      #excludedIps: ["...", "..."] # ips which should be explicit excluded from usage by lavalink
+      #strategy: "RotateOnBan" # RotateOnBan | LoadBalance | NanoSwitch | RotatingNanoSwitch
+      #searchTriggersFail: true # Whether a search 429 should trigger marking the ip as failing
+      #retryLimit: -1 # -1 = use default lavaplayer value | 0 = infinity | >0 = retry will happen this numbers times
+    #youtubeConfig: # Required for avoiding all age restrictions by YouTube, some restricted videos still can be played without.
+      #email: "" # Email of Google account
+      #password: "" # Password of Google account
+    #httpConfig: # Useful for blocking bad-actors from ip-grabbing your music node and attacking it, this way only the http proxy will be attacked
+      #proxyHost: "localhost" # Hostname of the proxy, (ip or domain)
+      #proxyPort: 3128 # Proxy port, 3128 is the default for squidProxy
+      #proxyUser: "" # Optional user for basic authentication fields, leave blank if you don't use basic auth
+      #proxyPassword: "" # Password for basic authentication
+
+metrics:
+  prometheus:
+    enabled: true
+    endpoint: /metrics
+
+sentry:
+  dsn: ""
+  environment: ""
+#  tags:
+#    some_key: some_value
+#    another_key: another_value
+
+logging:
+  file:
+    path: ./logs/
+
+  level:
+    root: INFO
+    lavalink: INFO
+
+  request:
+    enabled: true
+    includeClientInfo: true
+    includeHeaders: false
+    includeQueryString: true
+    includePayload: true
+    maxPayloadLength: 10000
+
+  logback:
+    rollingpolicy:
+      max-file-size: 1GB
+      max-history: 30
+
+plugins:
+  youtube:
+      enabled: true # Whether this source can be used.
+      allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+      allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
+      allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+      # The clients to use for track loading. See below for a list of valid clients.
+      # Clients are queried in the order they are given (so the first client is queried first and so on...)
+      clients:
+        - MUSIC
+        - TVHTML5EMBEDDED
+        - ANDROID_MUSIC
+        - ANDROID_TESTSUITE
+        - WEB
+        - WEBEMBEDDED
+        - ANDROID
+        - ANDROID_LITE
+        - MEDIA_CONNECT
+        - IOS
+
+      # You can configure individual clients with the following.
+      # Any options or clients left unspecified will use their default values
+      # for those individual clients.
+      # Client configurations will ONLY take effect if the client is registered above,
+      # otherwise they are ignored.
+      # ---------------- WARNING ----------------
+      # This part of the config is for DEMONSTRATION PURPOSES ONLY!
+      # Do NOT use this config before understanding what the options do.
+      # You do NOT need to copy this config just because it is published here.
+      # ---------------- WARNING ----------------
+      WEB: # names are specified as they are written below under "Available Clients".
+        # This will disable using the WEB client for video playback.
+        playback: false
+      TVHTML5EMBEDDED:
+        # The below config disables everything except playback for this client.
+        playlistLoading: false # Disables loading of playlists and mixes for this client.
+        searching: false # Disables the ability to search for videos for this client.
