@@ -28,15 +28,15 @@ lavalink:
       rotation: true
       channelMix: true
       lowPass: true
-    nonAllocatingFrameBuffer: true  # 메모리 할당을 줄여 CPU 부하를 낮추면서 트래픽 안정성 확보.
-    bufferDurationMs: 200  # GC 중단에 대한 내성을 유지하면서 트래픽 안정성을 위한 적절한 버퍼 크기.
-    frameBufferDurationMs: 500  # 너무 많은 오디오 데이터를 버퍼링하지 않도록 설정하여 트래픽을 일정하게 유지.
-    opusEncodingQuality: 5  # 적당한 품질로 CPU와 트래픽 균형을 유지.
-    resamplingQuality: LOW  # 낮은 리샘플링 품질로 CPU 부하를 줄이면서 일정한 트래픽 흐름 유지.
-    trackStuckThresholdMs: 5000  # 트랙이 멈춰 있는 시간을 약간 더 길게 잡아 일시적인 중단을 처리.
-    useSeekGhosting: false  # 메모리 사용량 절감을 위해 비활성화.
-    youtubePlaylistLoadLimit: 2  # 메모리 사용량을 고려해 유튜브 재생목록 로드를 2페이지로 제한.
-    playerUpdateInterval: 10  # 플레이어 업데이트 빈도를 줄여 트래픽 부하를 일정하게 유지.
+    nonAllocatingFrameBuffer: false  # 메모리 할당을 줄여 CPU 부하를 낮추면서 트래픽 안정성 확보.
+    bufferDurationMs: 400  # GC 중단에 대한 내성을 유지하면서 트래픽 안정성을 위한 적절한 버퍼 크기.
+    frameBufferDurationMs: 1000  # 너무 많은 오디오 데이터를 버퍼링하지 않도록 설정하여 트래픽을 일정하게 유지.
+    opusEncodingQuality: 10  # 높은 품질로 CPU와 트래픽 균형을 유지.
+    resamplingQuality: HIGH  # 높은 리샘플링 품질로 CPU 부하를 줄이면서 일정한 트래픽 흐름 유지.
+    trackStuckThresholdMs: 10000  # 트랙이 멈춰 있는 시간을 약간 더 길게 잡아 일시적인 중단을 처리.
+    useSeekGhosting: true  # 메모리 사용량 절감을 위해 비활성화.
+    youtubePlaylistLoadLimit: 5  # 메모리 사용량을 고려해 유튜브 재생목록 로드를 5페이지로 제한.
+    playerUpdateInterval: 5  # 플레이어 업데이트 빈도를 줄여 트래픽 부하를 일정하게 유지.
     youtubeSearchEnabled: true  # YouTube 검색 활성화.
     soundcloudSearchEnabled: true  # SoundCloud 검색 활성화.
     gc-warnings: true  # GC 경고를 활성화하여 트래픽 문제를 사전에 파악.
