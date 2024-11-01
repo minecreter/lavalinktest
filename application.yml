@@ -15,7 +15,7 @@ lavalink:
       soundcloud: true
       twitch: false
       vimeo: false
-      http: true
+      http: false
       local: false
     filters: # All filters are enabled by default
       volume: true
