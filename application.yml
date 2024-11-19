@@ -91,14 +91,22 @@ logging:
       max-history: 30
 
 plugins:
-    youtube:
-        enabled: true
-        allowSearch: true
-        allowDirectVideoIds: true
-        allowDirectPlaylistIds: true
-        clients:
+  youtube:
+      enabled: true # Whether this source can be used.
+      allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+      allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
+      allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+      # The clients to use for track loading. See below for a list of valid clients.
+      # Clients are queried in the order they are given (so the first client is queried first and so on...)
+      clients:
         - MUSIC
+        - TVHTML5EMBEDDED
+        - ANDROID_MUSIC
+        - ANDROID_TESTSUITE
         - WEB
+        - WEBEMBEDDED
+
+        - MEDIA_CONNECT
         - IOS
 
       # You can configure individual clients with the following.
