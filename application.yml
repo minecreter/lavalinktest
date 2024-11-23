@@ -101,13 +101,13 @@ plugins:
       clients:
         - MUSIC
         - TVHTML5EMBEDDED
-        - ANDROID_MUSIC
-        - ANDROID_TESTSUITE
+       # - ANDROID_MUSIC
+       # - ANDROID_TESTSUITE
         - WEB
         - WEBEMBEDDED
 
         - MEDIA_CONNECT
-        - IOS
+        #- IOS
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
