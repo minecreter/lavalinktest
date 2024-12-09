@@ -18,16 +18,16 @@ lavalink:
       http: false
       local: false
     filters: # All filters are enabled by default
-      volume: true
-      equalizer: true
-      karaoke: true
-      timescale: true
-      tremolo: true
-      vibrato: true
-      distortion: true
-      rotation: true
-      channelMix: true
-      lowPass: true
+      volume: false
+      equalizer: false
+      karaoke: false
+      timescale: false
+      tremolo: false
+      vibrato: false
+      distortion: false
+      rotation: false
+      channelMix: false
+      lowPass: false
     nonAllocatingFrameBuffer: true  # 메모리 할당을 줄여 CPU 부하를 낮추면서 트래픽 안정성 확보.
     bufferDurationMs: 400  # GC 중단에 대한 내성을 유지하면서 트래픽 안정성을 위한 적절한 버퍼 크기.
     frameBufferDurationMs: 500  # 너무 많은 오디오 데이터를 버퍼링하지 않도록 설정하여 트래픽을 일정하게 유지.
@@ -102,7 +102,7 @@ plugins:
         - MUSIC
         - ANDROID_VR
         - WEB
-        - WEBEMBEDDED
+        - MWEB
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
