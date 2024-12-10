@@ -115,10 +115,16 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
+        WEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: true
+          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+          playlistLoading: true
         MWEB:
           # Example: Disabling a client's playback capabilities.
           playback: true
           videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+          # playlistLoading: false
         WEBEMBEDDED:
           # Example: Configuring a client to exclusively be used for video loading and playback.
           playlistLoading: true # Disables loading of playlists and mixes.
