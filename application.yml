@@ -97,11 +97,6 @@ plugins:
       allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
       allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
       allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
-      # The clients to use for track loading. See below for a list of valid clients.
-      # Clients are queried in the order they are given (so the first client is queried first and so on...)
-      # pot:
-      #   token: "MluJCzjkai4dRYkzt0ED9RvM6Xfo5xcaosNdx7lInlrA8yWsOW5FxK3982lOCxFkA4wc4m4hgjpn0NGJjKsGOhIa2LEqdpnpRbiykGcmrAvCwsMm5N1r-36Zvfwv"
-      #   visitorData: "CgtoRzl0SllVX0pVQSjv3Yu6BjIKCgJLUhIEGgAgbQ%3D%3D"
       clients:
         - MUSIC
         - ANDROID_VR
@@ -119,9 +114,9 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
-        MWEB:
+        WEB:
           # Example: Disabling a client's playback capabilities.
-          playback: true
+          playback: false
           videoLoading: false # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
         WEBEMBEDDED:
           # Example: Configuring a client to exclusively be used for video loading and playback.
