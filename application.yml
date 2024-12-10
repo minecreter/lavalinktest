@@ -114,7 +114,7 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
-        WEB:
+        MWEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
           videoLoading: false # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
