@@ -101,7 +101,7 @@ plugins:
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
         - WEB
-        - WEBEMBEDDED
+        - MWEB
         # - ANDROID
         # - ANDROID_LITE
         # - MEDIA_CONNECT
