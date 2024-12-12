@@ -98,14 +98,14 @@ plugins:
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
 
       pot:
-        token: "MnSrIwGgoDK486sbIazI6-1irt2BLpbWz5fCO7HYT4F43HrPKYOtwWhY3yARhtBrweOqfsm-deJpCj9aXYjS4l8VW7VnA3RG3Fb_B0RoIDMrygx4U_fVjx_h3BCeXUoUGMR_N99kzcRQzXZdf6eykUTbGCfRLQ=="
-        visitorData: "CgtwMk9Ta0xnMTZWdyjcvOa6BjIKCgJLUhIEGgAgYw%3D%3D"
+        token: "nScihtUCw0aPZyyUtSRBJfJoEN5jhBaZZspjsPDHJ4IfzZ7RIge0YzR9kUN0eZozGOq_8zDAnmqcW_MTA9zj2N51a9X6EhdbbIOnnKw1oXUnPmzqbsNReJkOCX3A1w9TeP_9NCCHiSvX_YLBDGNbzzGwjisMA=="
+        visitorData: "CgtSX1gtNTJ6ZGZNYyj4seq6BjIKCgJLUhIEGgAgMg%3D%3D"
       # clients:
       clients:
         - MUSIC
         - ANDROID_VR
         - WEB
-        - MWEB
+        - WEBEMBEDDED
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
