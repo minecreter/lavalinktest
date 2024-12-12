@@ -98,8 +98,8 @@ plugins:
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
 
       pot:
-        token: "MnSIUgby5X7SJohqDqtQhqTgaZ3hM6ofqSdITgPyndh7_nITmYI-RwJpoQZ4sx0Q02JdmPgjixlC_lCCGUiLcpTtbnsf4KzwWMfF4B5tl-nS9XV5g7DV7FkRbYuhihs1zOj_6M15kHX0CoZM6dQZ4GPrkCnXlA=="
-        visitorData: "CgsxbFBWeVBPVnhsdyiPu-a6BjIKCgJLUhIEGgAgYg%3D%3D"
+        token: "IjhCAUICJVvH0gFmMTMPMypxGGsYcCNHAzMjeChXKywzNwBrC0oBZghNF2kLRAVmA2YOZmcyBiRxRQ=="
+        visitorData: "Cgs2M2hpZjZqaFA2ayjVi-q6BjIKCgJLUhIEGgAgLg%3D%3D"
       # clients:
       clients:
         - MUSIC
@@ -130,8 +130,8 @@ plugins:
       clientOptions:
         WEB:
           # Example: Disabling a client's playback capabilities.
-          playback: false
-          videoLoading: false # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+          playback: true
+          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
         WEBEMBEDDED:
           # Example: Configuring a client to exclusively be used for video loading and playback.
           playlistLoading: false # Disables loading of playlists and mixes.
