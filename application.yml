@@ -102,7 +102,7 @@ plugins:
         - MUSIC
         - ANDROID_VR
         - WEB
-        - WEBEMBEDDED
+        - MWEB
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
