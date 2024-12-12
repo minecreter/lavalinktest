@@ -105,7 +105,7 @@ plugins:
         - MUSIC
         - ANDROID_VR
         - WEB
-        - WEBEMBEDDED
+        - MWEB
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
@@ -130,7 +130,7 @@ plugins:
       clientOptions:
         MWEB:
           # Example: Disabling a client's playback capabilities.
-          playback: false
+          playback: true
           videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
         WEBEMBEDDED:
           # Example: Configuring a client to exclusively be used for video loading and playback.
