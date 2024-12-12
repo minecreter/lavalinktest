@@ -104,7 +104,7 @@ plugins:
         - MUSIC
         - ANDROID_VR
         - WEB
-        - MWEB
+        - WEBEMBEDDED
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
