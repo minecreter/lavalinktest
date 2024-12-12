@@ -1,5 +1,5 @@
 server: # REST and WS server
-  port: 2333
+  port: 62363
   address: 0.0.0.0
 
 lavalink:
@@ -95,17 +95,14 @@ plugins:
       allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
+      pot:
+        token: "MluJCzjkai4dRYkzt0ED9RvM6Xfo5xcaosNdx7lInlrA8yWsOW5FxK3982lOCxFkA4wc4m4hgjpn0NGJjKsGOhIa2LEqdpnpRbiykGcmrAvCwsMm5N1r-36Zvfwv"
+        visitorData: "CgtoRzl0SllVX0pVQSjv3Yu6BjIKCgJLUhIEGgAgbQ%3D%3D"
       clients:
         - MUSIC
-        - TVHTML5EMBEDDED
-        # - ANDROID_MUSIC
-        # - ANDROID_TESTSUITE
+        - ANDROID_VR
         - WEB
         - MWEB
-        # - ANDROID
-        # - ANDROID_LITE
-        # - MEDIA_CONNECT
-        # - IOS
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
@@ -117,12 +114,20 @@ plugins:
       # Do NOT use this config before understanding what the options do.
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
-      WEB: # names are specified as they are written below under "Available Clients".
-        # This will disable using the WEB client for video playback.
-        playback: false
-      TVHTML5EMBEDDED:
-        # The below config disables everything except playback for this client.
-        playlistLoading: false # Disables loading of playlists and mixes for this client.
-        searching: false # Disables the ability to search for videos for this client.
+      clientOptions:
+        WEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: true
+          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+          playlistLoading: true
+        MWEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: true
+          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+          # playlistLoading: false
+        WEBEMBEDDED:
+          # Example: Configuring a client to exclusively be used for video loading and playback.
+          playlistLoading: true # Disables loading of playlists and mixes.
+          searching: true # Disables the ability to search for videos.
 
 
