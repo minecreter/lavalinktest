@@ -95,14 +95,26 @@ plugins:
       allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
+
       pot:
-        token: "MnS6avF0Bg_947pSwvwuhTxQiXUVNC4qq1vHFRCKVl-DW8-cgcfsLMrD-zz26KxmNd-MaC1DyagW-SnRjvmL8_4DTrFPCgt76ZwzAEpMhDoL0sz9_FzbuFwhUjTRM84214MTwXMrRZYZY8dzuK4ggV0_12vxpg=="
-        visitorData: "CgtlemZoODZUc0FqVSjtrOu6BjIKCgJTRxIEGgAgHw%3D%3D"
+        token: "MnSO3mUxLxQfkY7m7OW8ZlXXSaWnvsnZSErHcCKm2PbvRNv5GT4X4BnHmj-javdwx7z-bijL76_S4edIwq0QrkQH7LrUx8koIOgpTCLi8rMkt5Cvh1XPCofmWTXK0Kws68B9zQwvYKFt9q1T3yAp5-eC-yGcXw=="
+        visitorData: "CgtrRHhtWjFqMUZyWSi4vea6BjIKCgJLUhIEGgAgPw%3D%3D"
+      # clients:
       clients:
         - MUSIC
         - ANDROID_VR
         - WEB
         - MWEB
+        # - TVHTML5EMBEDDED
+        # - ANDROID_MUSIC
+        # - ANDROID_TESTSUITE
+        # - WEB
+        # - WEBEMBEDDED
+        # - MWEB
+        # - ANDROID
+        # - ANDROID_LITE
+        # - MEDIA_CONNECT
+        # - IOS
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
@@ -117,17 +129,10 @@ plugins:
       clientOptions:
         WEB:
           # Example: Disabling a client's playback capabilities.
-          playback: true
-          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
-          playlistLoading: true
-        MWEB:
-          # Example: Disabling a client's playback capabilities.
-          playback: true
-          videoLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
-          # playlistLoading: false
+          playback: false
+          videoLoading: false # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
         WEBEMBEDDED:
           # Example: Configuring a client to exclusively be used for video loading and playback.
-          playlistLoading: true # Disables loading of playlists and mixes.
-          searching: true # Disables the ability to search for videos.
-
+          playlistLoading: false # Disables loading of playlists and mixes.
+          searching: false # Disables the ability to search for videos.
 
