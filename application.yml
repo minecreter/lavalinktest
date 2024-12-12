@@ -96,8 +96,8 @@ plugins:
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
       pot:
-        token: "MluJCzjkai4dRYkzt0ED9RvM6Xfo5xcaosNdx7lInlrA8yWsOW5FxK3982lOCxFkA4wc4m4hgjpn0NGJjKsGOhIa2LEqdpnpRbiykGcmrAvCwsMm5N1r-36Zvfwv"
-        visitorData: "CgtoRzl0SllVX0pVQSjv3Yu6BjIKCgJLUhIEGgAgbQ%3D%3D"
+        token: "MnS6avF0Bg_947pSwvwuhTxQiXUVNC4qq1vHFRCKVl-DW8-cgcfsLMrD-zz26KxmNd-MaC1DyagW-SnRjvmL8_4DTrFPCgt76ZwzAEpMhDoL0sz9_FzbuFwhUjTRM84214MTwXMrRZYZY8dzuK4ggV0_12vxpg=="
+        visitorData: "CgtlemZoODZUc0FqVSjtrOu6BjIKCgJTRxIEGgAgHw%3D%3D"
       clients:
         - MUSIC
         - ANDROID_VR
