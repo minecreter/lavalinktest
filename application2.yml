@@ -28,16 +28,18 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 400
-    frameBufferDurationMs: 12000
-    opusEncodingQuality: 5
+    bufferDurationMs: 600
+    frameBufferDurationMs: 20000
+    opusEncodingQuality: 3
     resamplingQuality: LOW
-    trackStuckThresholdMs: 10000
+    trackStuckThresholdMs: 15000
     useSeekGhosting: false
-    youtubePlaylistLoadLimit: 3
-    playerUpdateInterval: 5
+    youtubePlaylistLoadLimit: 2
+    playerUpdateInterval: 10
     youtubeSearchEnabled: true
     soundcloudSearchEnabled: false
+    gc-warnings: true
+
 
 
     #ratelimit:
@@ -97,9 +99,6 @@ plugins:
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
 
-      pot:
-        token: "nScihtUCw0aPZyyUtSRBJfJoEN5jhBaZZspjsPDHJ4IfzZ7RIge0YzR9kUN0eZozGOq_8zDAnmqcW_MTA9zj2N51a9X6EhdbbIOnnKw1oXUnPmzqbsNReJkOCX3A1w9TeP_9NCCHiSvX_YLBDGNbzzGwjisMA=="
-        visitorData: "CgtSX1gtNTJ6ZGZNYyj4seq6BjIKCgJLUhIEGgAgMg%3D%3D"
       # clients:
       clients:
         - MUSIC
