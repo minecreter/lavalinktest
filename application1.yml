@@ -99,9 +99,6 @@ plugins:
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
 
-      pot:
-        token: "IjhCAUICJVvH0gFmMTMPMypxGGsYcCNHAzMjeChXKywzNwBrC0oBZghNF2kLRAVmA2YOZmcyBiRxRQ=="
-        visitorData: "Cgs2M2hpZjZqaFA2ayjVi-q6BjIKCgJLUhIEGgAgLg%3D%3D"
       # clients:
       clients:
         - MUSIC
