@@ -28,17 +28,19 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 600
-    frameBufferDurationMs: 20000
+    bufferDurationMs: 1200
+    frameBufferDurationMs: 30000
     opusEncodingQuality: 3
-    resamplingQuality: LOW
-    trackStuckThresholdMs: 15000
+    resamplingQuality: MEDIUM
+    trackStuckThresholdMs: 20000
     useSeekGhosting: false
-    youtubePlaylistLoadLimit: 2
-    playerUpdateInterval: 10
+    youtubePlaylistLoadLimit: 1
+    playerUpdateInterval: 15
     youtubeSearchEnabled: true
     soundcloudSearchEnabled: false
     gc-warnings: true
+    gc-logging: true
+
 
 
 
