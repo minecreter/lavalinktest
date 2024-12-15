@@ -30,7 +30,7 @@ lavalink:
       lowPass: false
     bufferDurationMs: 800
     frameBufferDurationMs: 30000
-    opusEncodingQuality: 3
+    opusEncodingQuality: 5
     resamplingQuality: MEDIUM
     trackStuckThresholdMs: 20000
     useSeekGhosting: false
@@ -106,7 +106,7 @@ plugins:
         - MUSIC
         - ANDROID_VR
         - TVHTML5EMBEDDED
-        - TV
+        # - TV
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
