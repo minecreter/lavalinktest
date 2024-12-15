@@ -28,18 +28,18 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 1500
-    frameBufferDurationMs: 30000
-    opusEncodingQuality: 3
-    resamplingQuality: LOW
-    trackStuckThresholdMs: 25000
-    useSeekGhosting: false
-    youtubePlaylistLoadLimit: 1
-    playerUpdateInterval: 10
-    youtubeSearchEnabled: true
-    soundcloudSearchEnabled: false
-    gc-warnings: true
-    gc-logging: true
+    bufferDurationMs: 500           # 더 짧은 버퍼 시간으로 메모리 사용량 절감
+    frameBufferDurationMs: 15000    # 프레임 버퍼 시간을 15초로 축소 (RAM 사용 최적화)
+    opusEncodingQuality: 1          # Opus 인코딩 품질을 최저로 설정 (대역폭과 CPU 사용량 절감)
+    resamplingQuality: LOW          # 리샘플링 품질 최저로 설정 (RAM 사용 절감)
+    trackStuckThresholdMs: 30000    # 트랙 멈춤 감지 시간을 30초로 증가 (안정성 향상)
+    useSeekGhosting: false          # 메모리 사용량 절감을 위해 Seek Ghosting 비활성화
+    youtubePlaylistLoadLimit: 1     # 유튜브 플레이리스트 로드 제한
+    playerUpdateInterval: 20        # 플레이어 업데이트 주기 20초로 연장 (부하 감소)
+    youtubeSearchEnabled: true      # 유튜브 검색 활성화
+    soundcloudSearchEnabled: false  # SoundCloud 검색 비활성화
+    gc-warnings: true               # GC 경고 활성화
+    gc-logging: true                # GC 로그 활성화
 
 
 
@@ -106,8 +106,8 @@ plugins:
       clients:
         - MUSIC
         - ANDROID_VR
-        - TV
         - TVHTML5EMBEDDED
+        # - TV
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
@@ -138,3 +138,4 @@ plugins:
           # Example: Configuring a client to exclusively be used for video loading and playback.
           playlistLoading: false # Disables loading of playlists and mixes.
           searching: false # Disables the ability to search for videos.
+      
