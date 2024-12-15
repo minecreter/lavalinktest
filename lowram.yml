@@ -105,7 +105,7 @@ plugins:
       # clients:
       clients:
         - MUSIC
-        - ANDROID_VR
+        # - ANDROID_VR
         # - WEB
         - TV
         # - TVHTML5EMBEDDED
