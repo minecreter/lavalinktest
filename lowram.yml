@@ -28,17 +28,19 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 200 # 그대로 유지. 긴 GC 지연을 처리하는 데 도움을 줌.
-    frameBufferDurationMs: 10000 # 버퍼를 10초로 확장해 안정성 확보.
-    opusEncodingQuality: 8 # 음질을 높이고 CPU 부하를 적당히 유지.
-    resamplingQuality: MEDIUM # 음질과 성능의 균형을 위해 MEDIUM 설정.
-    trackStuckThresholdMs: 10000 # 트랙 스턱 임계치를 늘려 안정성을 강화.
-    useSeekGhosting: true # 그대로 유지. 끊김을 줄이는 데 유리.
-    youtubePlaylistLoadLimit: 10 # 한 번에 더 많은 페이지를 로드하도록 증가.
-    playerUpdateInterval: 5 # 업데이트 주기를 5초로 줄여 더 빠른 반응성.
-    youtubeSearchEnabled: true # 그대로 유지.
-    soundcloudSearchEnabled: false # 그대로 유지. 대역폭 절약.
-    gc-warnings: true # 그대로 유지.
+    bufferDurationMs: 1000          # 버퍼 지속 시간 (1초, 안정적인 스트리밍 유지)
+    frameBufferDurationMs: 20000   # 프레임 버퍼 지속 시간 (20초, 리소스 관리 최적화)
+    opusEncodingQuality: 5        # Opus 인코딩 품질 (5 - 고음질 유지)
+    resamplingQuality: HIGH        # 리샘플링 품질 (HIGH으로 유지)
+    trackStuckThresholdMs: 20000   # 트랙 멈춤 감지 임계값 (20초 유지)
+    useSeekGhosting: true         # Seek 버퍼링 안정성 개선
+    youtubePlaylistLoadLimit: 3   # 유튜브 플레이리스트 최대 로드 수 (3개로 제한)
+    playerUpdateInterval: 5        # 플레이어 상태 업데이트 주기 (5초로 설정)
+    youtubeSearchEnabled: true     # 유튜브 검색 활성화
+    soundcloudSearchEnabled: false
+    gc-warnings: true             # Garbage Collector 경고 활성화
+    gc-logging: true              # GC 로그 기록 활성화
+
 
     #ratelimit:
       #ipBlocks: ["1.0.0.0/8", "..."] # list of ip blocks
@@ -104,8 +106,8 @@ plugins:
       clients:
         - MUSIC
         - ANDROID_VR
-        - WEB
-        - MWEB
+        # - WEB
+        - TV
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
