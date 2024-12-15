@@ -28,7 +28,7 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 500           # 더 짧은 버퍼 시간으로 메모리 사용량 절감
+    bufferDurationMs: 1500           # 더 짧은 버퍼 시간으로 메모리 사용량 절감
     frameBufferDurationMs: 15000    # 프레임 버퍼 시간을 15초로 축소 (RAM 사용 최적화)
     opusEncodingQuality: 1          # Opus 인코딩 품질을 최저로 설정 (대역폭과 CPU 사용량 절감)
     resamplingQuality: LOW          # 리샘플링 품질 최저로 설정 (RAM 사용 절감)
