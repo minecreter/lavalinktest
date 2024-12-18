@@ -30,8 +30,8 @@ lavalink:
       lowPass: false
     bufferDurationMs: 1000          # 버퍼 지속 시간 (1초, 안정적인 스트리밍 유지)
     frameBufferDurationMs: 20000   # 프레임 버퍼 지속 시간 (20초, 리소스 관리 최적화)
-    opusEncodingQuality: 5        # Opus 인코딩 품질 (5 - 고음질 유지)
-    resamplingQuality: HIGH        # 리샘플링 품질 (HIGH으로 유지)
+    opusEncodingQuality: 0        # Opus 인코딩 품질 (5 - 고음질 유지)
+    resamplingQuality: LOW        # 리샘플링 품질 (HIGH으로 유지)
     trackStuckThresholdMs: 20000   # 트랙 멈춤 감지 임계값 (20초 유지)
     useSeekGhosting: true         # Seek 버퍼링 안정성 개선
     youtubePlaylistLoadLimit: 3   # 유튜브 플레이리스트 최대 로드 수 (3개로 제한)
