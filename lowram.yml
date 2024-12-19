@@ -106,14 +106,14 @@ plugins:
       clients:
         - MUSIC
         # - ANDROID_VR
-        - WEB
+        # - WEB
         - TV
         - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
         # - WEB
         # - WEBEMBEDDED
-        # - MWEB
+        - MWEB
         # - ANDROID
         # - ANDROID_LITE
         # - MEDIA_CONNECT
@@ -130,6 +130,11 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
+        MWEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: false
+          playlistLoading: true
+          videoLoading: true
         WEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
