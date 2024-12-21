@@ -4,15 +4,22 @@ server: # REST and WS server
 
 lavalink:
   plugins:
-      - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.1"
-        repository: "https://maven.lavalink.dev/releases"
+      - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.2"
+
+      - dependency: "com.github.Nansess.BaldMan-LavaSrc:baldman-plugin:8eb1d98df3"
+        repository: "https://jitpack.io/"
+      - dependency: "com.github.topi314.lavasearch:lavasearch-plugin:1.0.0"
+        repository: "https://maven.lavalink.dev/releases" # this is optional for lavalink v4.0.0-beta.5 or greater
+        snapshot: false
+      # - path: plugins/baldman-plugin-v4.5.0.jar
+
   pluginsDir: "./plugins"
   server:
     password: "stellarloomtemppass1test"
     sources:
       youtube: false
       bandcamp: false
-      soundcloud: false
+      soundcloud: true
       twitch: false
       vimeo: false
       http: false
@@ -37,7 +44,7 @@ lavalink:
     youtubePlaylistLoadLimit: 1     # 유튜브 플레이리스트 최대 로드 수 (1개로 제한)
     playerUpdateInterval: 10        # 플레이어 상태 업데이트 주기 (10초로 설정, 요청 수 줄임)
     youtubeSearchEnabled: true      # 유튜브 검색 활성화
-    soundcloudSearchEnabled: false  # SoundCloud 검색 비활성화 (메모리 절약)
+    soundcloudSearchEnabled: true  # SoundCloud 검색 비활성화 (메모리 절약)
     gc-warnings: false              # Garbage Collector 경고 비활성화 (로그 최소화)
     gc-logging: false               # GC 로그 기록 비활성화 (디스크 I/O 절약)
 
@@ -92,6 +99,43 @@ logging:
       max-history: 30
 
 plugins:
+  lavasrc:
+    providers: # Custom providers for track loading. This is the default
+      # - "dzisrc:%ISRC%" # Deezer ISRC provider
+      # - "dzsearch:%QUERY%" # Deezer search provider
+      - "ytsearch:\"%ISRC%\"" # Will be ignored if track does not have an ISRC. See https://esearch.wikipedia.org/wiki/International_Standard_Recording_Code
+      - "ytsearch:%QUERY%" # Will be used if track has no ISRC or no track could be found for the ISRC
+      - "scsearch:%QUERY%" # Soundcloud search provider
+      - "spsearch:%QUERY%" # Spotify search provider
+      - "sprec:%QUERY%" # Spotify recommendation search provider
+      #  you can add multiple other fallback sources here
+    sources:
+      spotify: true # Enable Spotify source
+      applemusic: true # Enable Apple Music source
+      deezer: false # Enable Deezer source
+      yandexmusic: false # Enable Yandex Music source
+      tidal: false
+      flowerytts: false # Enable Flowery TTs source
+      youtube: true # Enable YouTube search source (https://github.com/topi314/LavaSearch)
+    spotify:
+      countryCode: "KR" # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      playlistLoadLimit: 50 # The number of pages at 100 tracks each
+      albumLoadLimit: 6 # The number of pages at 50 tracks each
+    applemusic:
+      countryCode: "US" # the country code you want to use for filtering the artists top tracks and language. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      playlistLoadLimit: 6 # The number of pages at 300 tracks each
+      albumLoadLimit: 6 # The number of pages at 300 tracks each
+    # tidal:
+    #   countryCode: "US"
+    #   searchLimit: 6
+    # yandexmusic:
+    #   accessToken: "your access token" # the token used for accessing the yandex music api. See https://github.com/TopiSenpai/LavaSrc#yandex-music
+    # flowerytts:
+    #   voice: "default voice" # (case-sensitive) get default voice here https://flowery.pw/docs/flowery/tts-voices-v-1-tts-voices-get
+    #   translate: false # whether to translate the text to the native language of voice
+    #   silence: 0 # the silence parameter is in milliseconds. Range is 0 to 10000. The default is 0.
+    #   speed: 1.0 # the speed parameter is a float between 0.5 and 10. The default is 1.0. (0.5 is half speed, 2.0 is double speed, etc.)
+    #   audioFormat: "mp3" # supported formats are: mp3, ogg_opus, ogg_vorbis, aac, wav, and flac. Default format is mp3
   youtube:
       enabled: true # Whether this source can be used.
       allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
@@ -100,19 +144,19 @@ plugins:
       # The clients to use for track loading. See below for a list of valid clients.
       # Clients are queried in the order they are given (so the first client is queried first and so on...)
 
-      pot:
-        token: "IjggdSB2Ryy-mmMSVDpuD2Y5dBhIOnEiegV0JkoNVhBBQ2IfaT5jEmo5dR1pMGcSYRJ4NAVGZFATMQ=="
-        visitorData: "CgtONzFLTmhOQWZpTSjxvea6BjIKCgJLUhIEGgAgXA%3D%3D"
+      # pot:
+      #   token: "IjggdSB2Ryy-mmMSVDpuD2Y5dBhIOnEiegV0JkoNVhBBQ2IfaT5jEmo5dR1pMGcSYRJ4NAVGZFATMQ=="
+      #   visitorData: "CgtONzFLTmhOQWZpTSjxvea6BjIKCgJLUhIEGgAgXA%3D%3D"
       # clients:
       clients:
         - MUSIC
         # - ANDROID_VR
         # - WEB
         - TV
-        - TVHTML5EMBEDDED
+        # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
-        # - WEB
+        - WEB
         # - WEBEMBEDDED
         - MWEB
         # - ANDROID
@@ -131,11 +175,14 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
+        TV:
+          searching: false
         MWEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
           playlistLoading: true
           videoLoading: true
+          searching: true
         WEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
