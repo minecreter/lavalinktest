@@ -153,7 +153,7 @@ plugins:
         # - ANDROID_VR
         # - WEB
         - TV
-        # - TVHTML5EMBEDDED
+        - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
         - WEB
@@ -175,14 +175,12 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
-        TV:
-          searching: false
         MWEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
           playlistLoading: true
           videoLoading: true
-          searching: true
+          # searching: true
         WEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
