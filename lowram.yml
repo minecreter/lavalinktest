@@ -35,14 +35,14 @@ lavalink:
       rotation: false
       channelMix: false
       lowPass: false
-    bufferDurationMs: 500           # 버퍼 지속 시간 (0.5초, 메모리 절약)
+    bufferDurationMs: 800           # 버퍼 지속 시간 (0.5초, 메모리 절약)
     frameBufferDurationMs: 10000    # 프레임 버퍼 지속 시간 (10초, 메모리 효율 최적화)
     opusEncodingQuality: -1         # Opus 인코딩 품질 (기본값, 리소스 최소화)
     resamplingQuality: LOW          # 리샘플링 품질 (낮음, CPU 사용량 감소)
     trackStuckThresholdMs: 10000    # 트랙 멈춤 감지 임계값 (10초로 줄임)
     useSeekGhosting: true           # Seek 안정성 유지 (활성화)
     youtubePlaylistLoadLimit: 1     # 유튜브 플레이리스트 최대 로드 수 (1개로 제한)
-    playerUpdateInterval: 10        # 플레이어 상태 업데이트 주기 (10초로 설정, 요청 수 줄임)
+    playerUpdateInterval: 1        # 플레이어 상태 업데이트 주기 (10초로 설정, 요청 수 줄임)
     youtubeSearchEnabled: true      # 유튜브 검색 활성화
     soundcloudSearchEnabled: true  # SoundCloud 검색 비활성화 (메모리 절약)
     gc-warnings: false              # Garbage Collector 경고 비활성화 (로그 최소화)
