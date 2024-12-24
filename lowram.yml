@@ -25,7 +25,7 @@ lavalink:
       http: false
       local: false
     filters: # All filters are enabled by default
-      volume: false
+      volume: true
       equalizer: false
       karaoke: false
       timescale: false
