@@ -181,7 +181,7 @@ plugins:
       clients:
         - MUSIC
         # - ANDROID_VR
-        # - WEB
+        - WEB
         - TV
         # - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
@@ -193,6 +193,7 @@ plugins:
         # - ANDROID_LITE
         # - MEDIA_CONNECT
         # - IOS
+        - WEBEMBEDDED
 
       # You can configure individual clients with the following.
       # Any options or clients left unspecified will use their default values
@@ -217,11 +218,18 @@ plugins:
           playlistLoading: true
           videoLoading: true
           searching: true
+        WEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: false
+          playlistLoading: true
+          videoLoading: true
+          searching: true
         # WEB:
         #   # Example: Disabling a client's playback capabilities.
         #   playback: false
         #   playlistLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
-        # WEBEMBEDDED:
-        #   # Example: Configuring a client to exclusively be used for video loading and playback.
-        #   playlistLoading: false # Disables loading of playlists and mixes.
-        #   searching: false # Disables the ability to search for videos.
+        WEBEMBEDDED:
+          playback: false
+          playlistLoading: true
+          videoLoading: true
+          searching: true
