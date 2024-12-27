@@ -152,7 +152,7 @@ plugins:
         - MUSIC
         # - ANDROID_VR
         # - WEB
-        - TV
+        # - TV
         - TVHTML5EMBEDDED
         # - ANDROID_MUSIC
         # - ANDROID_TESTSUITE
@@ -175,23 +175,24 @@ plugins:
       # You do NOT need to copy this config just because it is published here.
       # ---------------- WARNING ----------------
       clientOptions:
-        TV:
-          # Example: Disabling a client's playback capabilities.
-          playback: true
-          playlistLoading: false
-          videoLoading: false
-          searching: false
+        # TV:
+        #   # Example: Disabling a client's playback capabilities.
+        #   playback: true
+        #   playlistLoading: false
+        #   videoLoading: false
+        #   searching: false
         MWEB:
           # Example: Disabling a client's playback capabilities.
           playback: false
           playlistLoading: true
           videoLoading: true
-          searching: true
-        # WEB:
-        #   # Example: Disabling a client's playback capabilities.
-        #   playback: false
-        #   playlistLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
-        # WEBEMBEDDED:
-        #   # Example: Configuring a client to exclusively be used for video loading and playback.
-        #   playlistLoading: false # Disables loading of playlists and mixes.
-        #   searching: false # Disables the ability to search for videos.
+          # searching: true
+        WEB:
+          # Example: Disabling a client's playback capabilities.
+          playback: false
+          playlistLoading: true # Disables loading of videos for this client. A client may still be used for playback even if this is set to 'false'.
+        WEBEMBEDDED:
+          playback: false
+          # Example: Configuring a client to exclusively be used for video loading and playback.
+          playlistLoading: false # Disables loading of playlists and mixes.
+          searching: false # Disables the ability to search for videos.
